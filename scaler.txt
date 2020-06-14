@@ -1,0 +1,28 @@
+drop database scaler;
+create database scaler;
+
+use scaler;
+
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user`(
+   `id` INT UNSIGNED AUTO_INCREMENT,
+   `name` VARCHAR(33) NOT NULL,
+   `password` VARCHAR(1003) NOT NULL,
+   `data` VARCHAR(10003) NOT NULL,
+   `is_locked` INT(4) NOT NULL,
+   `fail_number` INT UNSIGNED NOT NULL,
+   `release_time` DATETIME DEFAULT NULL,
+   PRIMARY KEY ( `id` ),
+   KEY (`name`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `persistent_logins`;
+CREATE TABLE IF NOT EXISTS `persistent_logins` (
+    username VARCHAR (64) NOT NULL,
+    series VARCHAR (64) PRIMARY KEY,
+    token VARCHAR (64) NOT NULL,
+    last_used TIMESTAMP NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `user` VALUES (1, 'pig', '$2a$10$9R3RCu24hXGHwUwv.wY1vuk4BIyx7szzskR/CCN0/6riqbRMMoZxy', '{}', 0, 0, NULL);

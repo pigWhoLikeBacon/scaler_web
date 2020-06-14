@@ -1,0 +1,15 @@
+INSERT INTO `day` VALUES (1, 1, '2020-1-18', 'l1');
+INSERT INTO `day` VALUES (2, 1, '2020-1-19', 'l2');
+INSERT INTO `day` VALUES (3, 1, '2020-1-20', 'l3');
+
+INSERT INTO `event` VALUES (1, 1, '12:00:00', 'c1');
+INSERT INTO `event` VALUES (2, 1, '13:00:00', 'c2');
+INSERT INTO `event` VALUES (3, 1, '14:00:00', 'c3');
+
+INSERT INTO `plan` VALUES (1, 1, 'c1');
+INSERT INTO `plan` VALUES (2, 0, 'c2');
+INSERT INTO `plan` VALUES (3, 1, 'c3');
+
+INSERT INTO `day_plan` VALUES (1, 1, 1, 1);
+INSERT INTO `day_plan` VALUES (2, 1, 2, 0);
+INSERT INTO `day_plan` VALUES (3, 1, 3, 0);
